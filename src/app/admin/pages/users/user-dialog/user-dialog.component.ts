@@ -54,7 +54,7 @@ export class UserDialogComponent implements OnInit {
       id: [data?.id],
       name: [data?.name || '', Validators.required],
       lastname: [data?.lastname || '', Validators.required],
-      username: [data?.username || '', Validators.required],
+      username: [data?.username || ''],
       email: [data?.email || '', Validators.required],
       phone: [data?.phone || '', Validators.required],
       image: [data?.image || '', Validators.required],

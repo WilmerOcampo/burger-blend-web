@@ -1,6 +1,6 @@
 export interface OrderItem {
   key?: string;
-  orderId: number;
+  orderKey: string;
   foodId: number;
   quantity: number;
   subtotal: number;

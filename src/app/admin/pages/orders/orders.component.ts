@@ -9,7 +9,7 @@ import {OrderService} from "../../../core/services/order.service";
 import {MatCardModule} from "@angular/material/card";
 import {MatFabButton} from "@angular/material/button";
 import {TablerIconsModule} from "angular-tabler-icons";
-import {DecimalPipe, NgForOf} from "@angular/common";
+import {DatePipe, DecimalPipe, NgForOf} from "@angular/common";
 
 @Component({
   selector: 'app-orders',
@@ -22,12 +22,13 @@ import {DecimalPipe, NgForOf} from "@angular/common";
     MatPaginatorModule,
     NgForOf,
     DecimalPipe,
+    DatePipe,
   ],
   templateUrl: './orders.component.html',
   styleUrl: './orders.component.scss'
 })
 export class OrdersComponent implements AfterViewInit {
-  displayedColumns: string[] = ['id', 'user', 'product', 'instructions', 'total', 'actions'];
+  displayedColumns: string[] = ['id', 'user', 'product', 'orderDate', 'total', 'actions'];
   dataSource = new MatTableDataSource<Order>();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 

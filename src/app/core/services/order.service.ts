@@ -91,16 +91,16 @@ export class OrderService {
       switchMap(orders => {
         return this.orderItems().pipe(
           map(items => {
-            const groupedItems: { [key: number]: OrderItem[] } = {};
+            const groupedItems: { [orderKey: string]: OrderItem[] } = {};
             items.forEach(item => {
-              if (!groupedItems[item.orderId]) {
-                groupedItems[item.orderId] = [];
+              if (!groupedItems[item.orderKey]) {
+                groupedItems[item.orderKey] = [];
               }
-              groupedItems[item.orderId].push(item);
+              groupedItems[item.orderKey].push(item);
             });
 
             return orders.map(order => {
-              order.orderItems = groupedItems[order.id] || [];
+              order.orderItems = groupedItems[order.key!!] || [];
               return order;
             });
           })

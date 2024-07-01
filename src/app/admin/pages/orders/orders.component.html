@@ -43,33 +43,10 @@
             </td>
           </mat-header-row>
 
-
-          <!--<mat-header-row matColumnDef="product">
-            <th mat-header-cell *matHeaderCellDef class="f-s-16 f-w-600"> Pedido</th>
-            <td mat-cell *matCellDef="let element">
-              <div *ngFor="let item of element.orderItems" class="d-flex align-items-center">
-                <div class="m-l-16">
-                  <p class="mat-subtitle-1 f-s-16">N: {{ item.foodName }}</p>
-                  <p class="mat-subtitle-1 f-s-16">D: {{ item.foodDescription }}</p>
-                  <small class="mat-body-1 f-s-14">Cantidad: {{ item.quantity }}</small>
-                  <small class="mat-body-1 f-s-14">Subtotal: {{ item.subtotal }}</small>
-                </div>
-              </div>
-              &lt;!&ndash;<div class="d-flex align-items-center">
-                &lt;!&ndash;<img width="40" height="40" class="rounded-circle" ngSrc="{{ element.image }}" alt="{{ element.name }}">&ndash;&gt;
-                <div class="m-l-16">
-                  <p class="mat-subtitle-1 f-s-16">{{ element.orderItems.foodId }}</p>
-                  <small class="mat-body-1 f-s-14">{{ element.orderItems.quantity }}</small>
-                  <small class="mat-body-1 f-s-14">{{ element.orderItems.subtotal }}</small>
-                </div>
-              </div>&ndash;&gt;
-            </td>
-          </mat-header-row>-->
-
-          <!-- Instructions column -->
-          <mat-header-row matColumnDef="instructions">
-            <th mat-header-cell *matHeaderCellDef class="f-s-16 f-w-600"> Instrucciones</th>
-            <td mat-cell *matCellDef="let element"> {{ element.instructions }}</td>
+          <!-- Order date column -->
+          <mat-header-row matColumnDef="orderDate">
+            <th mat-header-cell *matHeaderCellDef class="f-s-16 f-w-600"> Fecha Pedido</th>
+            <td mat-cell *matCellDef="let element"> {{ element.orderDate | date: 'dd / MMM / YYYY' }}</td>
           </mat-header-row>
 
           <mat-header-row matColumnDef="total">
