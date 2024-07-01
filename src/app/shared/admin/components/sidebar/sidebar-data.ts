@@ -7,7 +7,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Dashboard',
     iconName: 'layout-dashboard',
-    route: '/admin',
+    route: '/',
   },
   {
     navCap: 'Productos',
@@ -15,12 +15,12 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Productos',
     iconName: 'burger',
-    route: '/admin/foods',
+    route: '/foods',
   },
   {
     displayName: 'Categorías',
     iconName: 'category',
-    route: '/admin/categories',
+    route: '/categories',
   },
   {
     navCap: 'Usuarios',
@@ -28,12 +28,12 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Usuarios',
     iconName: 'users',
-    route: '/admin/users',
+    route: '/users',
   },
   {
     displayName: 'Órdenes',
     iconName: 'checklist',
-    route: '/admin/orders',
+    route: '/orders',
   },
 /*  {
     navCap: 'Auth',
