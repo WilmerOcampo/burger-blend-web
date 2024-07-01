@@ -1,0 +1,50 @@
+<div class="blank-layout-container justify-content-center align-items-center">
+  <div class="position-relative row w-100 h-100 bg-gredient justify-content-center">
+    <div class="col-lg-4 d-flex align-items-center">
+      <mat-card class="cardWithShadow boxed-auth">
+        <mat-card-content class="p-32">
+
+            <div  class="d-flex justify-content-center">
+              <img src="./assets/images/logos/burger-blend2.svg" class="align-middle m-5" alt="logo"/>
+              <img src="./assets/images/logos/burger-blend-text.svg" class="align-middle m-l-10" alt="logo"/>
+            </div><hr/>
+
+          <div class="text-center">
+            <h1 style="color: #f3704d;">Inicio de Sesión</h1>
+          </div>
+
+          <div class="or-border m-t-30">Bienvenido a Burger Blend</div>
+
+          <form [formGroup]="loginForm" (ngSubmit)="login()" class="m-t-30">
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <mat-label  class="f-s-16">Email</mat-label>
+              <input matInput formControlName="email" type="email">
+            </mat-form-field>
+
+            <!-- password -->
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <mat-label  class="f-s-16">Password</mat-label>
+              <input matInput formControlName="password" type="password">
+            </mat-form-field>
+
+            <div class="d-flex align-items-center m-b-12">
+              <mat-checkbox color="primary">Recordar</mat-checkbox>
+              <!--<a class="text-primary f-w-600 text-decoration-none m-l-auto f-s-14">
+                ¿Olvidó su contraseña?
+              </a>-->
+            </div>
+
+            <button mat-flat-button color="primary" type="submit" class="w-100">
+              Iniciar Sesión
+            </button>
+          </form>
+          <!--<span class="d-flex align-items-center justify-content-center  text-center m-t-24">
+            ¿Eres nuevo en Burger Blend?
+            <a mat-raised-button (click)="openUserDialog()" class="text-primary m-l-10">
+              Crear una cuenta</a>
+          </span>-->
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

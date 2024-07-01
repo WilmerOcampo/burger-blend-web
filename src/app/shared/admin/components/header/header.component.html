@@ -1,0 +1,85 @@
+<mat-toolbar class="topbar">
+  <!-- Mobile Menu -->
+  <button mat-icon-button (click)="toggleMobileNav.emit()" *ngIf="!showToggle">
+    <i-tabler name="menu-2" class="icon-20 d-flex"></i-tabler>
+  </button>
+
+  <!-- Search -->
+  <button mat-stroked-button="" class="m-l-10">
+    <div class="d-flex align-items-center">
+      <i-tabler name="search" class="icon-20 d-flex m-r-10"></i-tabler>
+      Buscar...
+    </div>
+  </button>
+
+  <!-- Separator -->
+  <span class="flex-1-auto"></span>
+
+  <!-- Message Dropdown -->
+  <button mat-icon-button class="m-l-10">
+    <i-tabler name="message-2" matBadge="5" matBadgeColor="accent"></i-tabler>
+  </button>
+
+  <!-- Notification Dropdown -->
+  <button mat-icon-button class="m-l-10">
+    <i-tabler name="bell" matBadge="2" matBadgeColor="warn"></i-tabler>
+  </button>
+
+  <!-- profile Dropdown -->
+  <button [matMenuTriggerFor]="profilemenu" mat-fab="" extended="" color="inherit">
+    <div class="d-flex align-items-center">
+      <img src="{{ user?.image }}" width="40" class="rounded-circle object-cover">
+      <div class="m-l-16 text-left d-none d-lg-flex">
+        <div>
+          <h5 class="f-s-16">{{ user?.name }}</h5>
+          <span class="f-s-14 mat-body-1">{{ user?.role }}</span>
+        </div>
+      </div>
+    </div>
+  </button><!---->
+
+  <mat-menu #profilemenu="matMenu" xPosition="before" class="topbar-dd cardWithShadow">
+    <ng-scrollbar *ngIf="user">
+      <button mat-menu-item class="p-x-32 p-y-16" style="max-width: 350px;">
+        <h6 class="f-s-16 f-w-600 m-0">User Profile</h6>
+        <div class="d-flex align-items-center p-b-24 b-b-1 m-t-16">
+          <img src="{{ user.image }}" width="95" class="rounded-circle">
+          <div class="m-l-16"><h6 class="f-s-16 f-w-600 m-0 mat-subtitle-1">{{ user.name }}</h6>
+            <span class="f-s-14 mat-body-1 d-block m-b-4">{{ user.lastname }}</span>
+            <span class="f-s-14 mat-body-1 d-block m-b-4">{{ user.role }}</span>
+            <span class="d-flex align-items-center f-s-10">
+                <i-tabler name="mail" class="icon-15 m-r-4"></i-tabler> {{ user.email }}</span>
+          </div>
+        </div>
+      </button>
+
+      <button (click)="openUserDialog(user)" mat-menu-item class="p-x-32 p-y-16">
+        <mat-icon class="d-flex align-items-center">
+          <i-tabler name="user"></i-tabler>
+        </mat-icon>
+        <h6 class="f-s-16 f-w-600 m-0 mat-subtitle-1">Mi Perfil</h6>
+        Ajustes de la Cuenta
+      </button>
+
+      <button mat-menu-item class="p-x-32 p-y-16">
+        <mat-icon class="d-flex align-items-center">
+          <i-tabler name="mail"></i-tabler>
+        </mat-icon>
+        <h6 class="f-s-16 f-w-600 m-0 mat-subtitle-1">Email</h6>
+        {{ user.email }}
+      </button>
+
+      <button mat-menu-item class="p-x-32 p-y-16">
+        <mat-icon class="d-flex align-items-center">
+          <i-tabler name="list-check"></i-tabler>
+        </mat-icon>
+        <h6 class="f-s-16 f-w-600 m-0 mat-subtitle-1">Mis Tareas</h6>
+        Tareas Diarias y Pendientes
+      </button>
+
+      <div class="p-x-32 p-y-16">
+        <button (click)="logout()" mat-flat-button color="primary" class="w-100">Cerrar Sesión</button>
+      </div>
+    </ng-scrollbar>
+  </mat-menu>
+</mat-toolbar>

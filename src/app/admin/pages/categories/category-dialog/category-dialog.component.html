@@ -1,0 +1,36 @@
+<mat-card-content class="">
+  <div class="text-center">
+    <h1 style="color: #f3704d;">Categoría</h1>
+  </div>
+
+  <div class="or-border m-t-30 m-b-30">Bienvenido a Burger Blend</div>
+
+  <form [formGroup]="categoryForm" (ngSubmit)="save()" class="m-b-10">
+    <mat-form-field appearance="outline" class="w-100" color="primary">
+      <mat-label  class="f-s-16">Categoría</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="w-100" color="primary">
+      <mat-label  class="f-s-16">Descripción</mat-label>
+      <textarea matInput formControlName="description" rows="auto"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="w-100" color="primary">
+      <mat-label  class="f-s-16">Imagen</mat-label>
+      <input matInput formControlName="image">
+    </mat-form-field>
+
+    <div class="d-flex justify-content-around">
+      @if (data.id) {
+        <mat-slide-toggle formControlName="active">Activo</mat-slide-toggle>
+      }
+
+      <button mat-fab extended color="primary" type="submit" [disabled]="categoryForm.invalid">
+        <div class="d-flex align-items-center">
+          <i-tabler name="plus" class="icon-20 d-flex m-r-10"></i-tabler><p style="font-size: larger">Registrar</p>
+        </div>
+      </button>
+    </div>
+  </form>
+</mat-card-content>

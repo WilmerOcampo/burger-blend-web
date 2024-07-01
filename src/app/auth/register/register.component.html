@@ -1,0 +1,55 @@
+<div class="blank-layout-container justify-content-center align-items-center bg-light-primary">
+  <div class="position-relative row w-100 h-100 bg-gredient justify-content-center">
+    <div class="col-lg-4 d-flex align-items-center">
+      <mat-card class="cardWithShadow boxed-auth">
+        <mat-card-content class="p-32">
+          <div class="text-center">
+            <h1 style="color: #f3704d;">Registro de Usuario</h1>
+          </div>
+
+          <div class="or-border m-t-30">Bienvenido a Burger Blend</div>
+
+          <form class="m-t-30">
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <mat-label  class="f-s-16">Nombres</mat-label>
+              <input matInput formControlName="name">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <mat-label  class="f-s-16">Apellidos</mat-label>
+              <input matInput formControlName="lastname">
+            </mat-form-field>
+
+            <!--Falta formContrlName-->
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <mat-label  class="f-s-16">Usuario</mat-label>
+              <input matInput maxlength="50">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <mat-label  class="f-s-16">Email</mat-label>
+              <input matInput type="email">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <mat-label  class="f-s-16">Password</mat-label>
+              <input matInput type="password">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <mat-label  class="f-s-16">Repetir password</mat-label>
+              <input matInput type="password">
+            </mat-form-field>
+
+            <a [routerLink]="['/']" mat-flat-button color="primary" class="w-100">
+              Registrarme
+            </a>
+          </form>
+          <span class="d-block f-w-500 text-center m-t-24">¿Ya tienes una cuenta?
+            <a [routerLink]="['/authentication/login']" class="text-decoration-none text-primary f-w-500 f-s-14">Inicia sesión</a>
+          </span>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
