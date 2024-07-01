@@ -50,7 +50,6 @@ export class CategoryService {
       return this.create(category);
     }
   }
-
   maxId(): Observable<number> {
     return this.categoriesRef.valueChanges().pipe(
       map(categories => Math.max(...categories.map(category => category.id), 0))
