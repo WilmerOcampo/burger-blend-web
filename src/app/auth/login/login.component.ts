@@ -44,7 +44,7 @@ export class LoginComponent {
   login(): void {
     const login: User = this.loginForm.value;
     this.authService.login(login.email, login.password).then(() => {
-      this.router.navigateByUrl("/admin").then(r => {
+      this.router.navigateByUrl("/").then(r => {
         this.alertService.successAlert("Bienvenido a Burger Blend")
       });
     }).catch(() => {

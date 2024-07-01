@@ -14,7 +14,7 @@ export class AuthenticatedGuard implements CanActivate {
     return this.authService.isAuthenticated().pipe(
       map(isAuthenticated => {
         if (isAuthenticated) {
-          this.router.navigate(['/admin']);
+          this.router.navigate(['/']);
           return false;
         } else {
           return true;
