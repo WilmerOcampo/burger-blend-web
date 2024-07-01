@@ -10,7 +10,7 @@ import {Category} from "../models/category";
 })
 export class FoodService {
   private basePath = 'foods';
-  private foodsRef: AngularFireList<Category>;
+  private foodsRef: AngularFireList<Food>;
 
   constructor(private db: AngularFireDatabase, private categoryService: CategoryService) {
     this.foodsRef = db.list(this.basePath);
@@ -60,7 +60,7 @@ export class FoodService {
 
   maxId(): Observable<number> {
     return this.foodsRef.valueChanges().pipe(
-      map(foods => Math.max(...foods.map(food => food.id), 0))
+      map(foods => Math.max(...foods.map(food => food.id), 3000))
     );
   }
 
