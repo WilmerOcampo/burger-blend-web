@@ -20,8 +20,6 @@ import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
-import {fbConfig} from "./fb-config";
-/*import {fbConfig} from "./fb-config";*/
 
 const firebaseConfig = {
   apiKey: '${API_KEY}',
@@ -29,7 +27,7 @@ const firebaseConfig = {
   databaseURL: '${DATABASE_URL}',
   projectId: '${PROJECT_ID}',
   storageBucket: '${STORAGE_BUCKET}',
-  messagingSenderId:'${MESSAGING_SENDER_ID}',
+  messagingSenderId: '${MESSAGING_SENDER_ID}',
   appId: '${APP_ID}'
 };
 
@@ -51,7 +49,7 @@ const firebaseConfig = {
   exports: [TablerIconsModule],
   bootstrap: [AppComponent],
   providers: [
-    importProvidersFrom(AngularFireModule.initializeApp(fbConfig)),
+    importProvidersFrom(AngularFireModule.initializeApp(firebaseConfig)),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
