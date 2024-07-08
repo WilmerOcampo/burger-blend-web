@@ -20,7 +20,6 @@ import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
-import * as process from "node:process";
 
 const firebaseConfig = {
   apiKey: process.env['API_KEY'],
