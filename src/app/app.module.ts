@@ -20,15 +20,16 @@ import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
+import * as process from "node:process";
 
 const firebaseConfig = {
-  apiKey: '${API_KEY}',
-  authDomain: '${AUTH_DOMAIN}',
-  databaseURL: '${DATABASE_URL}',
-  projectId: '${PROJECT_ID}',
-  storageBucket: '${STORAGE_BUCKET}',
-  messagingSenderId: '${MESSAGING_SENDER_ID}',
-  appId: '${APP_ID}'
+  apiKey: process.env['API_KEY'],
+  authDomain: process.env['AUTH_DOMAIN'],
+  databaseURL: process.env['DATABASE_URL'],
+  projectId: process.env['PROJECT_ID'],
+  storageBucket: process.env['STORAGE_BUCKET'],
+  messagingSenderId: process.env['MESSAGING_SENDER_ID'],
+  appId: process.env['APP_ID']
 };
 
 @NgModule({
