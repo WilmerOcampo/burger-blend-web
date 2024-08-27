@@ -20,16 +20,16 @@ import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
-import * as process from "node:process";
+import {fbConfig} from "./fb-config";
 
 const firebaseConfig = {
-  apiKey: process.env['API_KEY'] as string,
+  /*apiKey: process.env['API_KEY'] as string,
   authDomain: process.env['AUTH_DOMAIN'] as string,
   databaseURL: process.env['DATABASE_URL'],
   projectId: process.env['PROJECT_ID'] as string,
   storageBucket: process.env['STORAGE_BUCKET'] as string,
   messagingSenderId: process.env['MESSAGING_SENDER_ID'] as string,
-  appId: process.env['APP_ID'] as string
+  appId: process.env['APP_ID'] as string*/
 };
 
 @NgModule({
@@ -50,7 +50,7 @@ const firebaseConfig = {
   exports: [TablerIconsModule],
   bootstrap: [AppComponent],
   providers: [
-    importProvidersFrom(AngularFireModule.initializeApp(firebaseConfig)),
+    importProvidersFrom(AngularFireModule.initializeApp(fbConfig)),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule,

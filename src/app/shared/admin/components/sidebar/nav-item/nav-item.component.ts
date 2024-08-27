@@ -20,21 +20,21 @@ import {Router} from "@angular/router";
   templateUrl: './nav-item.component.html',
   styleUrl: './nav-item.component.scss'
 })
-export class NavItemComponent implements OnChanges {
-  ngOnChanges(changes: SimpleChanges): void {
+export class NavItemComponent /*implements OnChanges*/ {
+  /*ngOnChanges(changes: SimpleChanges): void {
     this.navService.currentUrl.subscribe((url: string) => {
       if (this.item.route && url) {
       }
     });
-  }
+  }*/
 
   @Input() item: NavItem | any;
-  @Input() depth: any;
+  //@Input() depth: any;
 
   constructor(public navService: NavService, public router: Router) {
-    if (this.depth === undefined) {
+    /*if (this.depth === undefined) {
       this.depth = 0;
-    }
+    }*/
   }
 
   onItemSelected(item: NavItem) {
@@ -43,9 +43,9 @@ export class NavItemComponent implements OnChanges {
     }
 
     // scroll
-    document.querySelector('.page-wrapper')?.scroll({
+    /*document.querySelector('.page-wrapper')?.scroll({
       top: 0,
       left: 0,
-    });
+    });*/
   }
 }

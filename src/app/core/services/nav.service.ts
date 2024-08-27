@@ -5,13 +5,13 @@ import {BehaviorSubject} from 'rxjs';
 @Injectable({providedIn: 'root'})
 export class NavService {
 
-  public currentUrl = new BehaviorSubject<any>(undefined);
+  //public currentUrl = new BehaviorSubject<any>(undefined);
 
   constructor(private router: Router) {
-    this.router.events.subscribe((event: Event) => {
+    /*this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
         this.currentUrl.next(event.urlAfterRedirects);
       }
-    });
+    });*/
   }
 }
